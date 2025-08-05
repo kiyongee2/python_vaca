@@ -10,4 +10,14 @@ os.chdir("c:/pyworks")
 
 # 목록 보기
 dir = os.popen("dir")
-print(dir.read())
+# print(dir.read())
+
+# 파일 목록을 리스트로 만들기
+files = os.listdir("c:/pyworks")
+print(files)
+print(files[1])
+print(files[-1])
+
+# 전체 출력
+for file in files:
+    print(file)
