@@ -9,13 +9,24 @@ def turn_down():
     t.right(2) #오른쪽으로 2도
 
 def fire():
+    ang = t.heading() #거북이가 바라보는 현재 각도
     while t.ycor() > 0: #포탄이 땅위에 있는 동안
         t.forward(15)
         t.right(5)
     
     d = t.distance(target, 0) #포탄과 목표지점과의 거리
-    t.write(d)
-
+    # t.write(d) #거리값 출력
+    t.sety(random.randint(10, 100)) #y좌표 - 성공, 실패를 표시할 위치
+    if d < 25: #목표 지점에 닿으면 
+        t.color('blue')
+        #False- 거북이 위치를 옮기지 않음. center-문자 가운데 정렬, 글자크기-17
+        t.write("Good!", False, 'center', ('', 17))
+    else: #목표 지점에 닿지 않으면
+        t.color('red')
+        t.write("Bad!", False, 'center', ('', 15))
+        t.color('black')
+        t.goto(-200, 10) #거북이를 처음 발사위치로 보냄
+        t.setheading(ang) #처음 기억한 각도로 되돌림
 
 # 땅 그리기
 t.goto(-300, 0)
