@@ -62,6 +62,7 @@ def gobN(n):
   i=4, 6 * 4 = 24
 '''
 
+'''
 # factorial() 호출
 print(factorial(1))
 print(factorial(2))
@@ -74,3 +75,28 @@ print(gobN(1))
 print(gobN(2))
 print(gobN(3))
 print(gobN(4))
+'''
+
+# 피보나치 수열
+'''
+  1 1 2 3 5 8...
+  세째항 = 첫째항 + 둘째항
+'''
+def fibo(n):
+    if n <= 2: #종료 조건
+        return 1
+    else:
+        return fibo(n-2) + fibo(n-1)
+
+'''
+   n=4, fibo(2) + fibo(3) = 3
+   n=3, fibo(1) + fibo(2) = 2
+   n=2, fibo(2) = 1
+   n=1, fibo(1) = 1
+'''
+
+# fibo() 호출
+print(fibo(1)) #1
+print(fibo(2)) #1(결과값)
+print(fibo(3)) #2
+print(fibo(4)) #3
